@@ -3,134 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal Trainer online com treinos personalizados, acompanhamento de evolução e planos para hipertrofia e emagrecimento.">
-  <meta name="keywords" content="personal trainer, treino online, hipertrofia, emagrecimento, acompanhamento fitness">
-  <meta name="author" content="Personal Trainer Pro">
-  <meta property="og:title" content="Personal Trainer Pro | Treinos Personalizados">
-  <meta property="og:description" content="Transformando esforço em resultados reais com método estratégico e acompanhamento profissional.">
+  <meta name="description" content="Personal Trainer premium com treinos personalizados, acompanhamento em tempo real e evolução visível.">
+  <meta property="og:title" content="CT Profit | Performance e Resultado">
+  <meta property="og:description" content="Landing page premium fitness com planos, resultados e contato direto.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80">
-  <title>Personal Trainer Pro | Evolução com Estratégia</title>
+  <title>CT Profit | Evolução com Estratégia</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <a href="#home" class="logo">CT<span>PROFIT</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
-      <span class="theme-icon theme-moon">☾</span>
-      <span class="theme-icon theme-sun">☀</span>
-    </button>
+  <div class="noise-layer" aria-hidden="true"></div>
+
+  <header class="header glass">
+    <a href="#home" class="brand">
+      <span class="logo-mark">CT</span>
+      <span class="logo-text">
+        Profit
+        <small>personal trainer</small>
+      </span>
+    </a>
+
     <nav class="nav" id="navMenu">
-      <a href="#resultados">Resultados</a>
-      <a href="#frames">Frames</a>
-      <a href="#planos">Planos</a>
-      <a href="#chamada">Chamada</a>
-      <a href="#pagamento">Pagamento</a>
-      <a href="#contato">Contato</a>
+      <a href="#home"><i class="fa-solid fa-house"></i> Início</a>
+      <a href="#beneficios"><i class="fa-solid fa-bolt"></i> Benefícios</a>
+      <a href="#resultados"><i class="fa-solid fa-chart-line"></i> Resultados</a>
+      <a href="#frames"><i class="fa-solid fa-camera-retro"></i> Frames</a>
+      <a href="#planos"><i class="fa-solid fa-layer-group"></i> Planos</a>
+      <a href="#contato"><i class="fa-solid fa-headset"></i> Contato</a>
     </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <main>
     <section id="home" class="hero">
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="hero-bg hero-parallax" aria-hidden="true"></div>
       <div class="hero-overlay"></div>
-      <div class="hero-content reveal">
-        <img class="hero-profile" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Personal Trainer Henrique" loading="eager" decoding="async">
-        <h1>Henrique <span class="hero-name">Costa</span></h1>
-        <p class="hero-subtitle">Estrutura direta: veja resultados, escolha o plano ideal, finalize o pagamento e comece seu acompanhamento.</p>
-        <div class="hero-actions">
-          <a href="#planos" class="btn btn-primary">Ver Planos e Valores</a>
-          <a href="#contato" class="btn btn-outline">Falar com o Treinador</a>
+
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-kicker" data-reveal="left"><i class="fa-solid fa-fire-flame-curved"></i> Treino premium 100% orientado</p>
+          <h1 class="hero-title" data-reveal="up">
+            Henrique <span class="shine">Costa</span>
+            <span class="stroke">Personal Trainer</span>
+          </h1>
+          <p class="hero-subtitle" data-reveal="up">
+            Estrutura clara: escolha o plano, acompanhe sua evolução e receba ajustes semanais para hipertrofia ou emagrecimento — sem enrolação.
+          </p>
+          <div class="hero-actions" data-reveal="up">
+            <a href="#planos" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i> Ver planos agora
+            </a>
+            <a href="#contato" class="btn btn-ghost">
+              <i class="fa-solid fa-message"></i> Falar com o treinador
+            </a>
+          </div>
+          <div class="hero-stats" data-reveal="up">
+            <div class="stat-card">
+              <i class="fa-solid fa-user-check"></i>
+              <div>
+                <strong>+180</strong>
+                <span>Alunos ativos</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-stopwatch"></i>
+              <div>
+                <strong>90 dias</strong>
+                <span>Média para 1º resultado</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <div>
+                <strong>3x</strong>
+                <span>Mais consistência</span>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-indicator" aria-hidden="true">
+            <span></span>
+            Scroll suave
+          </div>
+        </div>
+
+        <div class="hero-right" data-reveal="zoom">
+          <div class="profile-frame">
+            <div class="profile-glow"></div>
+            <img class="hero-profile" src="img/WhatsApp Image 2026-03-10 at 08.41.13.jpeg" alt="Personal Trainer Henrique Costa" loading="eager" decoding="async">
+          </div>
+          <div class="floating-badge" aria-hidden="true">
+            <i class="fa-solid fa-signal"></i>
+            Evolução guiada em tempo real
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="resultados" class="section results">
-      <div class="section-title reveal">
-        <h2>Resultados de Alunos</h2>
-        <p>Antes e depois com acompanhamento contínuo e plano individual.</p>
+    <section id="beneficios" class="section">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-bolt"></i> Benefícios</p>
+        <h2>Resultados consistentes com acompanhamento premium</h2>
+        <p class="muted">Microinterações, feedback claro e um visual de landing page premium fitness.</p>
       </div>
-      <div class="results-grid">
-        <article class="result-card reveal">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=800&q=80" alt="Evolução de aluno em treino">
-          <div class="result-content">
-            <h3>Aluno João</h3>
-            <p>3 meses de treino</p>
-            <strong>-12kg</strong>
-            <p>Mais disposição, condicionamento e saúde.</p>
-          </div>
+      <div class="container benefits-grid">
+        <article class="benefit-card" data-reveal="up">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Plano estratégico</h3>
+          <p>Treinos desenhados para sua rotina com ajustes semanais.</p>
         </article>
-        <article class="result-card reveal">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80" alt="Evolução física de aluna">
-          <div class="result-content">
-            <h3>Aluna Camila</h3>
-            <p>4 meses de treino</p>
-            <strong>+4kg de massa magra</strong>
-            <p>Definição corporal e força com treino progressivo.</p>
-          </div>
+        <article class="benefit-card" data-reveal="up">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Suporte direto</h3>
+          <p>Contato rápido via WhatsApp e checagens em vídeo.</p>
         </article>
-        <article class="result-card reveal">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Treino funcional com personal trainer">
-          <div class="result-content">
-            <h3>Aluno Pedro</h3>
-            <p>2 meses de treino</p>
-            <strong>-8kg</strong>
-            <p>Rotina mais ativa, energia alta e disciplina.</p>
-          </div>
+        <article class="benefit-card" data-reveal="up">
+          <i class="fa-solid fa-flask"></i>
+          <h3>Métricas claras</h3>
+          <p>Painel de progresso com frames e registros visuais.</p>
+        </article>
+        <article class="benefit-card" data-reveal="up">
+          <i class="fa-solid fa-sparkles"></i>
+          <h3>Experiência premium</h3>
+          <p>Interface rápida, animações suaves e zero fricção.</p>
         </article>
       </div>
-      <div class="testimonials reveal">
-        <blockquote>"Entrei sem foco e hoje tenho rotina, resultado e clareza do que fazer em cada treino."</blockquote>
+    </section>
+
+    <section id="resultados" class="section section-dark">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-chart-line"></i> Resultados</p>
+        <h2>Transformações reais com acompanhamento contínuo</h2>
+        <p class="muted">Antes e depois com protocolos claros, alimentação alinhada e monitoramento.</p>
+      </div>
+      <div class="container results-grid">
+        <article class="result-card" data-reveal="zoom">
+          <div class="result-tag"><i class="fa-solid fa-fire"></i> -12 kg em 90 dias</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=900&q=80" alt="Evolução de aluno em treino">
+          <div class="result-content">
+            <h3>João</h3>
+            <p>Disciplina + plano semanal = energia e performance.</p>
+          </div>
+        </article>
+        <article class="result-card" data-reveal="zoom">
+          <div class="result-tag"><i class="fa-solid fa-dumbbell"></i> +4 kg de massa magra</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80" alt="Evolução física de aluna">
+          <div class="result-content">
+            <h3>Camila</h3>
+            <p>Treinos progressivos e foco em hipertrofia.</p>
+          </div>
+        </article>
+        <article class="result-card" data-reveal="zoom">
+          <div class="result-tag"><i class="fa-solid fa-heart-pulse"></i> -8 kg em 60 dias</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Treino funcional com personal trainer">
+          <div class="result-content">
+            <h3>Pedro</h3>
+            <p>Condicionamento, constância e rotina sem desculpas.</p>
+          </div>
+        </article>
+      </div>
+      <div class="container testimonials" data-reveal="up">
+        <blockquote>“Entrei sem foco e hoje tenho rotina, resultado e clareza do que fazer em cada treino.”</blockquote>
         <span>- Mariana, aluna online há 4 meses</span>
       </div>
     </section>
 
-    <section id="frames" class="section frames">
-      <div class="section-title reveal">
-        <h2>Frames de Evolução</h2>
-        <p>Arraste para o lado e veja transformações e metas cumpridas.</p>
+    <section id="frames" class="section">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-camera-retro"></i> Frames</p>
+        <h2>Frames de evolução — arraste e acompanhe</h2>
+        <p class="muted">Parallax suave, glow nas bordas e animação ao entrar na tela.</p>
       </div>
-      <div class="frames-track reveal" id="framesTrack">
-        <article class="frame-card">
+      <div class="frames-track" id="framesTrack">
+        <article class="frame-card" data-reveal="up">
           <div class="frame-before-after">
             <img loading="lazy" src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=800&q=80" alt="Antes da evolução do aluno João">
             <img loading="lazy" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80" alt="Depois da evolução do aluno João">
           </div>
           <div class="frame-info">
-            <h3>Aluno João</h3>
-            <p>90 dias • -12kg • Mais disposição</p>
+            <h3>João</h3>
+            <p>90 dias • -12 kg • Mais disposição</p>
           </div>
         </article>
-        <article class="frame-card">
+        <article class="frame-card" data-reveal="up">
           <div class="frame-before-after">
             <img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Antes da evolução da aluna Camila">
             <img loading="lazy" src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=800&q=80" alt="Depois da evolução da aluna Camila">
           </div>
           <div class="frame-info">
-            <h3>Aluna Camila</h3>
-            <p>120 dias • +4kg massa magra</p>
+            <h3>Camila</h3>
+            <p>120 dias • +4 kg massa magra</p>
           </div>
         </article>
-        <article class="frame-card">
+        <article class="frame-card" data-reveal="up">
           <div class="frame-before-after">
             <img loading="lazy" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Antes da evolução do aluno Pedro">
             <img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Depois da evolução do aluno Pedro">
           </div>
           <div class="frame-info">
-            <h3>Aluno Pedro</h3>
-            <p>60 dias • -8kg • Energia em alta</p>
+            <h3>Pedro</h3>
+            <p>60 dias • -8 kg • Energia alta</p>
           </div>
         </article>
-        <article class="frame-card">
+        <article class="frame-card" data-reveal="up">
           <div class="frame-before-after">
             <img loading="lazy" src="https://images.unsplash.com/photo-1517964603305-11c0f43683f9?auto=format&fit=crop&w=800&q=80" alt="Antes da evolução da aluna Luiza">
             <img loading="lazy" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80" alt="Depois da evolução da aluna Luiza">
           </div>
           <div class="frame-info">
-            <h3>Aluna Luiza</h3>
+            <h3>Luiza</h3>
             <p>75 dias • Definição e força</p>
           </div>
         </article>
@@ -138,102 +233,108 @@
       <p class="frames-hint">Passe o dedo ou arraste para navegar pelos frames.</p>
     </section>
 
-    <section id="planos" class="section plans">
-      <div class="section-title reveal">
-        <h2>Planos e Valores</h2>
-        <p>Escolha seu ritmo semanal e nível de acompanhamento.</p>
+    <section id="planos" class="section section-dark">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Planos</p>
+        <h2>Planos e valores para o ritmo que você quer</h2>
+        <p class="muted">Transições suaves, ícones premium e destaque para o mais escolhido.</p>
       </div>
-      <div class="plans-grid">
-        <article class="plan-card reveal">
-          <h3>Plano Bronze (2x/semana)</h3>
+      <div class="container plans-grid">
+        <article class="plan-card" data-reveal="up">
+          <h3><i class="fa-solid fa-medal"></i> Bronze 2x/semana</h3>
           <p class="price">R$ 499<span>/mês</span></p>
           <ul>
-            <li>Total de 8 aulas no mês</li>
-            <li>Treino personalizado básico</li>
-            <li>Suporte por mensagem</li>
+            <li><i class="fa-solid fa-calendar-days"></i> 8 aulas no mês</li>
+            <li><i class="fa-solid fa-sliders"></i> Treino personalizado básico</li>
+            <li><i class="fa-solid fa-comments"></i> Suporte por mensagem</li>
           </ul>
           <a href="#contato" class="btn btn-primary">Quero o Bronze</a>
         </article>
-        <article class="plan-card featured reveal">
-          <span class="badge">Mais Escolhido</span>
-          <h3>Plano Prata (3x/semana)</h3>
+        <article class="plan-card featured" data-reveal="up">
+          <span class="badge">Mais escolhido</span>
+          <h3><i class="fa-solid fa-star"></i> Prata 3x/semana</h3>
           <p class="price">R$ 659<span>/mês</span></p>
           <ul>
-            <li>Total de 12 aulas no mês</li>
-            <li>Ajuste quinzenal</li>
-            <li>Acompanhamento dedicado</li>
+            <li><i class="fa-solid fa-calendar-check"></i> 12 aulas no mês</li>
+            <li><i class="fa-solid fa-rotate"></i> Ajuste quinzenal</li>
+            <li><i class="fa-solid fa-headset"></i> Acompanhamento dedicado</li>
           </ul>
           <a href="#contato" class="btn btn-primary">Quero o Prata</a>
         </article>
-        <article class="plan-card reveal">
-          <h3>Plano Ouro (4x/semana)</h3>
+        <article class="plan-card" data-reveal="up">
+          <h3><i class="fa-solid fa-crown"></i> Ouro 4x/semana</h3>
           <p class="price">R$ 849<span>/mês</span></p>
           <ul>
-            <li>Total de 16 aulas no mês</li>
-            <li>Ajustes semanais</li>
-            <li>Suporte direto</li>
-            <li>Planejamento de evolução</li>
+            <li><i class="fa-solid fa-calendar-plus"></i> 16 aulas no mês</li>
+            <li><i class="fa-solid fa-gauge-high"></i> Ajustes semanais</li>
+            <li><i class="fa-solid fa-headset"></i> Suporte direto</li>
+            <li><i class="fa-solid fa-bullseye"></i> Planejamento de evolução</li>
           </ul>
           <a href="#contato" class="btn btn-primary">Quero o Ouro</a>
         </article>
       </div>
-      <div class="section-title reveal">
+
+      <div class="container section-head secondary" data-reveal="up">
         <h2>Plano Plus</h2>
-        <p>Para quem quer aceleração máxima com execução quase diária.</p>
+        <p class="muted">Aceleração máxima com execução quase diária.</p>
       </div>
-      <div class="payment-grid reveal">
-        <article class="plan-card">
-          <h3>Plano Plus (5x/semana)</h3>
+      <div class="container payment-grid">
+        <article class="plan-card" data-reveal="up">
+          <h3><i class="fa-solid fa-bolt"></i> Plus 5x/semana</h3>
           <p class="price">R$ 999<span>/mês</span></p>
           <ul>
-            <li>Total de 20 aulas no mês</li>
-            <li>Monitoramento de desempenho</li>
-            <li>Prioridade de atendimento</li>
+            <li><i class="fa-solid fa-dumbbell"></i> 20 aulas no mês</li>
+            <li><i class="fa-solid fa-chart-simple"></i> Monitoramento de desempenho</li>
+            <li><i class="fa-solid fa-shield"></i> Prioridade de atendimento</li>
           </ul>
           <a href="#contato" class="btn btn-primary">Quero o Plus</a>
         </article>
-        <article class="card">
-          <h3>Consultoria Online</h3>
+        <article class="card glass" data-reveal="up">
+          <h3><i class="fa-solid fa-laptop"></i> Consultoria online</h3>
           <p>Plano remoto para quem prefere executar no próprio ritmo com suporte técnico e ajustes por videochamada.</p>
           <ul>
-            <li>Treino com progressão semanal</li>
-            <li>Check-in por foto e métricas</li>
-            <li>Ajustes periódicos conforme evolução</li>
+            <li><i class="fa-solid fa-arrow-trend-up"></i> Progressão semanal</li>
+            <li><i class="fa-solid fa-image-portrait"></i> Check-in por foto e métricas</li>
+            <li><i class="fa-solid fa-wrench"></i> Ajustes periódicos conforme evolução</li>
           </ul>
-          <a href="#contato" class="btn btn-outline">Solicitar Consultoria</a>
+          <a href="#contato" class="btn btn-ghost">Solicitar consultoria</a>
         </article>
       </div>
     </section>
 
-    <section id="chamada" class="section members">
-      <div class="section-title reveal">
-        <h2>Resultado Recente + Próximo Passo</h2>
-        <p>Quando o método encaixa na rotina, os números começam a aparecer.</p>
+    <section id="chamada" class="section">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-bullseye"></i> Próximo passo</p>
+        <h2>Resultado recente + início imediato</h2>
+        <p class="muted">Veja um resultado concreto e já clique para garantir sua vaga.</p>
       </div>
-      <div class="members-grid reveal">
-        <article class="result-card">
+      <div class="container members-grid">
+        <article class="result-card" data-reveal="zoom">
           <img loading="lazy" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=900&q=80" alt="Resultado recente de aluna">
           <div class="result-content">
-            <h3>Resultado recente: 90 dias</h3>
-            <p>Redução de gordura, aumento de força e melhoria de disposição no dia a dia.</p>
+            <h3>90 dias de consistência</h3>
+            <p>Redução de gordura, aumento de força e disposição diária.</p>
           </div>
         </article>
-        <div class="card">
-          <h3>Toque em saiba mais para adquirir agora</h3>
-          <p>Chame no WhatsApp e eu te envio recomendação de plano + início imediato.</p>
-          <a href="https://wa.me/553584280114?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener" class="btn btn-primary">Saiba Mais no WhatsApp</a>
+        <div class="card cta-card" data-reveal="up">
+          <h3>Toque e comece agora</h3>
+          <p>Chame no WhatsApp e receba a recomendação de plano + início imediato.</p>
+          <a href="https://wa.me/553584280114?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Saiba mais no WhatsApp
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="pagamento" class="section payment">
-      <div class="section-title reveal">
-        <h2>Métodos de Pagamento</h2>
-        <p>Formas simples para fechar seu plano sem burocracia.</p>
+    <section id="pagamento" class="section section-dark">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-wallet"></i> Pagamento</p>
+        <h2>Métodos simples para fechar seu plano</h2>
+        <p class="muted">Transparência, rapidez e vaga garantida.</p>
       </div>
-      <div class="payment-grid reveal">
-        <div class="card">
-          <h3>Opções</h3>
+      <div class="container payment-grid">
+        <div class="card" data-reveal="up">
+          <h3><i class="fa-solid fa-credit-card"></i> Opções</h3>
           <ul>
             <li>Dinheiro</li>
             <li>Cartão (crédito ou débito)</li>
@@ -241,59 +342,63 @@
             <li>Assinatura mensal recorrente</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Condições</h3>
+        <div class="card" data-reveal="up">
+          <h3><i class="fa-solid fa-clipboard-check"></i> Condições</h3>
           <ul>
             <li>Pagamento confirmado, vaga reservada</li>
-            <li>Primeira avaliação enviada em até 24h</li>
+            <li>Primeira avaliação em até 24h</li>
             <li>Início do acompanhamento na mesma semana</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="section contact">
-      <div class="section-title reveal">
-        <h2>Contato</h2>
+    <section id="contato" class="section">
+      <div class="container section-head" data-reveal="up">
+        <p class="eyebrow"><i class="fa-solid fa-headset"></i> Contato</p>
+        <h2>Fale comigo e comece seu acompanhamento</h2>
       </div>
-      <div class="contact-grid">
-        <div class="card reveal">
-          <h3>Fale agora</h3>
-          <p class="social-row">
-            <span class="social-label">WhatsApp:</span>
-            <a class="social-link" href="https://wa.me/553584280114?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo WhatsApp">
-              +55 35 8428-0114
-            </a>
-          </p>
-          <p class="social-row">
-            <span class="social-label">Instagram:</span>
-            <a class="social-link" href="https://instagram.com/luiiisfeliipe_" target="_blank" rel="noopener">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Logo Instagram">
-              @luiiisfeliipe_
-            </a>
-          </p>
+      <div class="container contact-grid">
+        <div class="card contact-card" data-reveal="left">
+          <h3><i class="fa-solid fa-comments"></i> Fale agora</h3>
+          <p class="social-row"><i class="fa-brands fa-whatsapp"></i> +55 35 99963-5717</p>
+          <p class="social-row"><i class="fa-brands fa-instagram"></i> @luiiisfeliipe_</p>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://wa.me/553584280114?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener">Falar no WhatsApp</a>
-            <a class="btn btn-outline" href="https://instagram.com/luiiisfeliipe_" target="_blank" rel="noopener">Abrir Instagram</a>
+            <a class="btn btn-primary" href="https://wa.me/5535999635717?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="https://instagram.com/luiiisfeliipe_" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
           </div>
         </div>
-        <form class="card form reveal">
-          <h3>Envie uma mensagem</h3>
-          <input type="text" placeholder="Seu nome" required>
-          <input type="text" placeholder="Seu WhatsApp" required>
-          <textarea rows="4" placeholder="Seu objetivo de treino"></textarea>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+
+        <form class="card form" id="contactForm" data-reveal="right">
+          <h3><i class="fa-solid fa-clipboard-list"></i> Informações para iniciar</h3>
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <input type="number" id="idade" placeholder="Sua idade" required>
+          <input type="number" id="peso" placeholder="Seu peso (kg)" required>
+          <input type="number" id="altura" placeholder="Sua altura (cm)" required>
+          <input type="text" id="dias" placeholder="Dias livres para treinar (ex: Seg, Qua, Sex)" required>
+          <input type="text" id="horario" placeholder="Horário disponível para treino" required>
+          <textarea id="objetivo" rows="3" placeholder="Qual seu objetivo? (emagrecer, ganhar massa, etc)" required></textarea>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Enviar informações
+          </button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Personal Trainer Pro. Todos os direitos reservados.</p>
+    <p>© 2026 CT Profit. Evolução guiada, resultado real.</p>
   </footer>
 
-  <a class="whatsapp-fixed" href="https://wa.me/553584280114?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener" aria-label="Atendimento no WhatsApp">WhatsApp</a>
+  <a class="whatsapp-fixed" href="https://wa.me/5535999635717?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20treinar%20com%20voc%C3%AA.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20planos%20e%20hor%C3%A1rios." target="_blank" rel="noopener" aria-label="Atendimento no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>
