@@ -2,7 +2,6 @@ const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 const revealElements = document.querySelectorAll(".reveal");
 const framesTrack = document.getElementById("framesTrack");
-const framesSection = document.getElementById("frames");
 const themeToggle = document.getElementById("themeToggle");
 
 menuToggle?.addEventListener("click", () => {
@@ -51,8 +50,7 @@ let isDragging = false;
 let startX = 0;
 let scrollLeft = 0;
 let autoPaused = false;
-let inView = false;
-let autoActive = false;
+let autoActive = true;
 let lastFrame = null;
 const autoSpeed = 0.06; // px per ms (~60px/s)
 
@@ -73,7 +71,7 @@ framesTrack?.addEventListener("pointermove", (event) => {
 
 const stopDragging = () => {
   isDragging = false;
-  if (inView) autoPaused = false;
+  autoPaused = false;
 };
 
 framesTrack?.addEventListener("pointerup", stopDragging);
@@ -88,6 +86,18 @@ framesTrack?.addEventListener("mouseleave", () => {
 });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let loopPoint = 0;
+const updateLoopPoint = () => {
+  if (!framesTrack || !framesTrack.dataset.duplicated) return;
+  loopPoint = framesTrack.scrollWidth / 2;
+};
+
+if (framesTrack && !framesTrack.dataset.duplicated) {
+  const cards = Array.from(framesTrack.querySelectorAll(".frame-card"));
+  cards.forEach((card) => framesTrack.appendChild(card.cloneNode(true)));
+  framesTrack.dataset.duplicated = "true";
+  updateLoopPoint();
+}
 
 const autoScrollStep = (timestamp) => {
   if (!autoActive || autoPaused || isDragging || prefersReducedMotion) {
@@ -99,9 +109,9 @@ const autoScrollStep = (timestamp) => {
   if (lastFrame != null) {
     const delta = timestamp - lastFrame;
     framesTrack.scrollLeft += delta * autoSpeed;
-    const maxScroll = framesTrack.scrollWidth - framesTrack.clientWidth;
-    if (framesTrack.scrollLeft >= maxScroll - 1) {
-      framesTrack.scrollLeft = 0;
+    const maxScroll = loopPoint || framesTrack.scrollWidth - framesTrack.clientWidth;
+    if (framesTrack.scrollLeft >= maxScroll) {
+      framesTrack.scrollLeft -= maxScroll;
     }
   }
   lastFrame = timestamp;
@@ -112,19 +122,36 @@ if (framesTrack) {
   requestAnimationFrame(autoScrollStep);
 }
 
-const framesObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      inView = entry.isIntersecting;
-      autoActive = inView;
-      if (!inView) {
-        autoPaused = true;
-      } else {
-        autoPaused = false;
-      }
-    });
-  },
-  { threshold: 0.35 }
-);
+window.addEventListener("load", updateLoopPoint);
+window.addEventListener("resize", updateLoopPoint);
 
-if (framesSection) framesObserver.observe(framesSection);
+const contactForm = document.getElementById("contactForm");
+const whatsappNumber = "5535984280114";
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
+
+  const nome = document.getElementById("nome")?.value?.trim() || "";
+  const idade = document.getElementById("idade")?.value?.trim() || "";
+  const peso = document.getElementById("peso")?.value?.trim() || "";
+  const altura = document.getElementById("altura")?.value?.trim() || "";
+  const dias = document.getElementById("dias")?.value?.trim() || "";
+  const horario = document.getElementById("horario")?.value?.trim() || "";
+  const objetivo = document.getElementById("objetivo")?.value?.trim() || "";
+
+  const mensagem = [
+    "Ola! Quero iniciar acompanhamento.",
+    `Nome: ${nome}`,
+    `Idade: ${idade}`,
+    `Peso: ${peso} kg`,
+    `Altura: ${altura} m`,
+    `Dias livres: ${dias}`,
+    `Horario: ${horario}`,
+    `Objetivo: ${objetivo}`,
+  ].join("\n");
+
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
+  const popup = window.open(url, "_blank", "noopener");
+  if (!popup) window.location.href = url;
+});
