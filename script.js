@@ -75,3 +75,36 @@ contactForm?.addEventListener("submit", (event) => {
   const popup = window.open(url, "_blank", "noopener");
   if (!popup) window.location.href = url;
 });
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const heroBg = document.querySelector(".hero-bg");
+
+  if (heroBg) {
+    heroBg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.05)`;
+  }
+});
+document.querySelectorAll(".benefits-grid, .frames-track, .plans-grid")
+.forEach((container) => {
+  const items = container.children;
+  Array.from(items).forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.1}s`;
+  });
+});
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".frame-card img").forEach((img) => {
+    const rect = img.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      const progress = 1 - rect.top / windowHeight;
+      img.style.transform = `scale(${1 + progress * 0.1})`;
+    }
+  });
+});
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / height) * 100;
+
+  document.querySelector(".scroll-bar").style.width = progress + "%";
+});
