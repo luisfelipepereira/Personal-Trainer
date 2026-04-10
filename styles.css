@@ -922,7 +922,7 @@ font-weight:500;
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 15%, rgba(255, 53, 93, 0.18), transparent 55%);
+  background: radial-gradient(circle at 20% 15%, var(--accent) -70%, transparent 55%);
   pointer-events: none;
 }
 
