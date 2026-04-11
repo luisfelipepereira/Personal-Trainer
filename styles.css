@@ -114,16 +114,21 @@ img {
 }
 
 .logo-mark {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  object-fit: cover;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-  filter: saturate(1.05) contrast(1.05);
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+
+  transition: transform 0.2s ease;
 }
 
+.logo-mark:hover {
+  transform: scale(1.05);
+}
 .logo-text {
   display: flex;
   flex-direction: column;
