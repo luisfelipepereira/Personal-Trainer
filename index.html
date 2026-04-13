@@ -379,8 +379,7 @@
     <h2>Comece agora seu resultado</h2>
     <p class="muted">Fale comigo no WhatsApp e receba um plano ideal para você.</p>
   </div>
-
-  <div class="container members-grid">
+   <div class="container members-grid">
     <article class="result-card" data-reveal="zoom">
       <img loading="lazy" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=900&q=80">
       <div class="result-content">
@@ -406,37 +405,92 @@
     <p class="muted">Escolha a melhor forma para falar comigo e receber mais informações.</p>
   </div>
 
-  <div class="container plans-grid">
+  <div class="container contact-grid">
 
-    <!-- WhatsApp -->
-    <article class="plan-card" data-reveal="up">
-      <h3><i class="fa-brands fa-whatsapp"></i> WhatsApp</h3>
-      <p>Atendimento rápido e direto para tirar dúvidas, ver planos e iniciar seu acompanhamento.</p>
-      <ul>
-        <li><i class="fa-solid fa-circle-check"></i> Resposta rápida</li>
-        <li><i class="fa-solid fa-user-check"></i> Atendimento personalizado</li>
-        <li><i class="fa-solid fa-bolt"></i> Início imediato</li>
-      </ul>
-      <a href="https://wa.me/5535984280114?text=Olá! Vim pelo site e quero mais informações." target="_blank" class="btn btn-primary">
-        Chamar no WhatsApp
-      </a>
-    </article>
+    <!-- CONTATOS EM FORMATO DE PLANOS -->
+    <div class="plans-grid">
 
-    <!-- Instagram -->
-    <article class="plan-card" data-reveal="up">
-      <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
-      <p>Acompanhe conteúdos, resultados e dicas para evoluir no treino.</p>
-      <ul>
-        <li><i class="fa-solid fa-image"></i> Resultados reais</li>
-        <li><i class="fa-solid fa-video"></i> Dicas e treinos</li>
-        <li><i class="fa-solid fa-star"></i> Conteúdo exclusivo</li>
-      </ul>
-      <a href="https://www.instagram.com/uaihenrique11/" target="_blank" class="btn btn-ghost">
-        Acessar Instagram
-      </a>
-    </article>
+      <!-- WhatsApp -->
+      <article class="plan-card" data-reveal="up">
+        <h3><i class="fa-brands fa-whatsapp"></i> WhatsApp</h3>
+        <p>Atendimento rápido e direto para tirar dúvidas e iniciar seu acompanhamento.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Resposta rápida</li>
+          <li><i class="fa-solid fa-user-check"></i> Atendimento personalizado</li>
+          <li><i class="fa-solid fa-bolt"></i> Início imediato</li>
+        </ul>
+        <a href="https://wa.me/5535984280114?text=Olá! Vim pelo site e quero mais informações." target="_blank" class="btn btn-primary">
+          Chamar no WhatsApp
+        </a>
+        
+      </article>
+
+      <!-- Instagram -->
+      <article class="plan-card" data-reveal="up">
+        <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
+        <p>Acompanhe conteúdos, resultados e dicas para evoluir no treino.</p>
+        <ul>
+          <li><i class="fa-solid fa-image"></i> Resultados reais</li>
+          <li><i class="fa-solid fa-video"></i> Dicas práticas</li>
+          <li><i class="fa-solid fa-star"></i> Conteúdo exclusivo</li>
+        </ul>
+        <a href="https://instagram.com/uaihenrique11" target="_blank" class="btn btn-ghost">
+          Acessar Instagram
+        </a>
+        
+      </article>
+    </div>
+  </div>
+</section>
+<section id="formulario" class="section">
+  
+  <!-- HEAD -->
+  <div class="container section-head" data-reveal="up">
+    <p class="eyebrow">
+      <i class="fa-solid fa-envelope"></i> Formulário
+    </p>
+    <h2>Preencha e comece hoje</h2>
+    <p class="muted">
+      Informe seus dados e receba um plano ideal totalmente personalizado.
+    </p>
+  </div>
+
+  <!-- FORM CENTRALIZADO -->
+  <div class="container" style="max-width: 720px;">
+    
+    <form class="card form" id="contactForm" data-reveal="up">
+      <h3>
+        <i class="fa-solid fa-clipboard-list"></i> Inicie seu acompanhamento
+      </h3>
+
+      <p class="muted form-note">
+        Leva menos de 1 minuto. Você receberá a recomendação direto no WhatsApp.
+      </p>
+
+      <div class="form-grid">
+        <input type="text" id="nome" placeholder="Seu nome completo" required>
+        <input type="number" id="idade" placeholder="Idade" required>
+      </div>
+
+      <div class="form-grid">
+        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
+        <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
+      </div>
+
+      <div class="form-grid">
+        <input type="text" id="dias" placeholder="Dias disponíveis" required>
+        <input type="text" id="horario" placeholder="Horário disponível" required>
+      </div>
+
+      <textarea id="objetivo" rows="3" placeholder="Seu objetivo" required></textarea>
+
+      <button type="submit" class="btn btn-primary">
+        <i class="fa-solid fa-paper-plane"></i> Receber plano no WhatsApp
+      </button>
+    </form>
 
   </div>
+
 </section>
   </main>
 
